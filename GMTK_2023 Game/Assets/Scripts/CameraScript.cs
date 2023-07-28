@@ -10,18 +10,20 @@ public class CameraScript : MonoBehaviour
     private float rotationSpeed = 30f;
     public float deviation;
     public Light cameraView;
+
+
     private float intensity = 2.23f;
 
+    private float InitialRotation; //inital y degree rotation
     private float lowerBound;
     private float upperBound;
     void Start()
     {
+        InitialRotation = Mathf.Abs(transform.eulerAngles.y);
         //Gets the upper and lower bounds via the "deviation" (Works like error bars on a chart)
         upperBound = Mathf.Abs(transform.eulerAngles.y) + deviation;
 
         lowerBound = Mathf.Abs(transform.eulerAngles.y) - deviation;
-
-
     }
 
     // Update is called once per frame

@@ -6,26 +6,28 @@ public class DetectObject : MonoBehaviour
 {
     // Start is called before the first frame update
     public Light spotlight;
-    private GameObject alien;
     public GameObject[] aliens;
-    public CamController cm;
+
+    private GameObject alien;
+    private CamController cm;
     private bool isDetecting = true;
     void Start()
     {
-
+        cm = GameObject.Find("CamController").GetComponent<CamController>();
+        aliens = cm.aliensList;
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < aliens.Length; i++) 
+        /*for (int i = 0; i < aliens.Length; i++) 
         {
             if (aliens[i].GetComponent<playerSelect>().Selected) 
             {
                 alien = aliens[i];
                 break;
             }
-        }
+        }*/
         if (alien != null && spotlight.intensity > 0 && isDetecting)
         {
             //Calculates angle between the two

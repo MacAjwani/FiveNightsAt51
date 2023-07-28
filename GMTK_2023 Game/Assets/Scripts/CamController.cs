@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,11 @@ public class CamController : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject[] cameras;
+    public GameObject[] aliensList;
+
     private float changeInterval = 3.0f;
     private float lives = 3;
     private float diffSpeed = 90f;
-    public Timer timer;
     void Start()
     {
         InvokeRepeating("PickCamera", changeInterval, changeInterval);
@@ -26,6 +28,8 @@ public class CamController : MonoBehaviour
 
     void PickCamera()
     {
+        Boolean selected;
+
         //Finds selected camera and unselects, if one exists
         for (int i = 0; i < cameras.Length; i++)
         {
@@ -36,7 +40,7 @@ public class CamController : MonoBehaviour
             }
         }
         //Turns on random camera from cameras array
-        int index = Random.Range(0, cameras.Length);
+        int index = UnityEngine.Random.Range(0, cameras.Length);
         cameras[index].GetComponent<CameraScript>().isSelected = true;
         print("Random1");
     }

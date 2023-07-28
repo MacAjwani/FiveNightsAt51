@@ -8,13 +8,19 @@ public class CameraScript : MonoBehaviour
     // Start is called before the first frame update
     public bool isSelected = false;
     private float rotationSpeed = 30f;
-    public float lowerBound;
-    public float upperBound;
+    public float deviation;
     public Light cameraView;
     private float intensity = 2.23f;
 
+    private float lowerBound;
+    private float upperBound;
     void Start()
     {
+        //Gets the upper and lower bounds via the "deviation" (Works like error bars on a chart)
+        upperBound = Mathf.Abs(transform.eulerAngles.y) + deviation;
+
+        lowerBound = Mathf.Abs(transform.eulerAngles.y) - deviation;
+
 
     }
 

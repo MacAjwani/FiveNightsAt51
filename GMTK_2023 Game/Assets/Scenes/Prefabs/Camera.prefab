@@ -103,6 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3876898659964876383}
+  - component: {fileID: 6892825778841316509}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -117,7 +118,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4463393440068048428}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 47.9, y: 4.107, z: -11.882}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -125,8 +126,23 @@ Transform:
   - {fileID: 1273036602284717542}
   - {fileID: 5676744667665792318}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &6892825778841316509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4463393440068048428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f845215161b05844a9a269ab08ae480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  deviation: 35
+  cameraView: {fileID: 2624236452668568786}
 --- !u!1 &5226502960235665221
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +152,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1273036602284717542}
-  - component: {fileID: 5283511423114930458}
   m_Layer: 0
   m_Name: CameraF
   m_TagString: Untagged
@@ -164,22 +179,6 @@ Transform:
   m_Father: {fileID: 3876898659964876383}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -134.73, z: 25.99}
---- !u!114 &5283511423114930458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5226502960235665221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f845215161b05844a9a269ab08ae480, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSelected: 0
-  lowerBound: 290
-  upperBound: 340
-  cameraView: {fileID: 2624236452668568786}
 --- !u!1 &6992423392256815718
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,7 +509,6 @@ MonoBehaviour:
   spotlight: {fileID: 2624236452668568786}
   aliens:
   - {fileID: 0}
-  cm: {fileID: 0}
 --- !u!1001 &274466598512343357
 PrefabInstance:
   m_ObjectHideFlags: 0
